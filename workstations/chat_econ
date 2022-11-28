@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+tmux new-session -s chat_economy -n NOTES -d
+tmux new-window -t chat_economy -d -n DISCORD-BOT
+tmux new-window -t chat_economy -d -n DISCORD-BOT2
+tmux new-window -t chat_economy -d -n VIM_JOURNAL
+tmux new-window -t chat_economy -d -n BEGINSOUNDS
+tmux new-window -t chat_economy -d -n BEGINSOUNDS2
+tmux new-window -t chat_economy -d -n CT1
+
+tmux send-keys -t chat_economy:NOTES 'bw'        Enter
+tmux send-keys -t chat_economy:DISCORD-BOT 'cd ~/code/nft-club-bot'  Enter
+tmux send-keys -t chat_economy:DISCORD-BOT2 'cd ~/code/nft-club-bot' Enter
+tmux send-keys -t chat_economy:BEGINSOUNDS 'bs'  Enter
+tmux send-keys -t chat_economy:BEGINSOUNDS2 'bs' Enter
+
+# ===================
+# === Vim Journal ===
+# ===================
+
+tmux select-window -t chat_economy:VIM_JOURNAL
+tmux send-keys -t chat_economy:VIM_JOURNAL 'vj' Enter
+
+# =============
+# === CT1 ====
+# =============
+
+tmux select-window -t chat_economy:CT1
+tmux send-keys -t chat_economy:CT1 'ct; python bot.py' Enter
+tmux select-layout tiled
+
+# ======================================
+# === Final Selection and Attachment ===
+# ======================================
+
+tmux select-window -t chat_economy:NOTES
+tmux -u -f ~/.config/tmux/.tmux.conf attach -t chat_economy

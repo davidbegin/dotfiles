@@ -1,0 +1,138 @@
+## DO We use these values
+TMUX_CONFIG="~/.config/tmux/.tmux.conf"
+SOUNDFONT="/usr/share/soundfonts/FluidR3_GM.sf2"
+
+# TMUX Related Aliases alias                                 \
+  tn="tmux -u -f $TMUX_CONFIG new"    \
+  ta="tmux -u -f $TMUX_CONFIG attach" \
+  tt="nvim $TMUX_CONFIG"
+
+# NVIM Related
+alias ft="nvim ~/.config/nvim/ftplugin"             \
+  vc="cd ~/.config/nvim; nvim ."                    \
+  shada="nvim ~/.local/share/nvim/shada/main.shada" \
+  content="~/.config/dotfiles/workstations/content"
+
+alias xclip="xclip -sel clip"
+alias factorio="~/.local/share/Steam/steamapps/common/Factorio/bin/x64/factorio"
+alias saves="cd /home/begin/.factorio/saves"
+alias fun="~/.config/dotfiles/workstations/fun"
+alias aa="nvim /home/begin/.config/dotfiles/aliases/aliasrc"
+alias lsplog="tail -f ~/.local/share/nvim/lsp.log"
+alias bonsai="cbonsai -i -l -t 5 -b 1"
+alias factory="cd ~/.local/share/Steam/steamapps/common/Factorio"
+alias stackoverflow="lynx https://stackoverflow.com/"
+
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias                               \
+	cp="cp -iv"                       \
+	mv="mv -iv"                       \
+	rm="rm -v"                        \
+	mkd="mkdir -pv"                   \
+	yt="youtube-dl --add-metadata -i" \
+	yta="yt -x -f bestaudio/best"     \
+	ffmpeg="ffmpeg -hide_banner"
+
+# Colorize commands when possible.
+alias                                                \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto"                           \
+	diff="diff --color=auto"                           \
+	ccat="highlight --out-format=ansi"
+
+
+# These common commands are just too long! Abbreviate them.
+alias                        \
+	ka="killall"               \
+	g="git"                    \
+	trem="transmission-remote" \
+	YT="youtube-viewer"        \
+	sdn="sudo shutdown -h now" \
+	p="sudo pacman"
+
+
+# Some other stuff
+alias                                                                       \
+  ref="shortcuts >/dev/null; source ~/.config/shortcutrc"                   \
+  aq='/home/begin/code/aq/aq.perl | lolcat'                                 \
+  asciiquarium='/home/begin/code/aq/aq.perl | lolcat'                       \
+  e='exit'                                                                  \
+  ii='nvim ~/.config/i3/config'                                             \
+  ja="nvim ~/journals/arch_notes.md"                                        \
+  jk='wal -i ~/.config/wall.png'                                            \
+  jl='wal --theme random_dark'                                              \
+  k='clear'                                                                 \
+  lc="lolcat"                                                               \
+  ls='ls --color=auto'                                                      \
+  pomo="muccadoro"                                                          \
+  rc="source ~/.config/zsh/.zshrc"                                          \
+  starwars="telnet towel.blinkenlights.nl"                                  \
+  t='beginbot'                                                              \
+  td="nvim ~/journals/DAILY/"$(date '+%F.md')""                             \
+  tt="nvim ~/Wiki/README.md"                                                \
+  te="cat ~/.config/TWITCH_CHAT_COMMANDS | dmenu -l 30 | xargs beginbot"    \
+  tq="cat ~/.config/TUTORIAL | dmenu -l 30 | xargs beginbot"                \
+  va='source venv/bin/activate'                                             \
+  ve='python -m venv venv; source venv/bin/activate'                        \
+  v="nvim ."                                                                \
+  vi="nvim"                                                                 \
+  zz="nvim ~/.config/zsh/.zshrc"                                            \
+  streamtime="~/.config/dotfiles/workstations/chat_econ"                    \
+  life="/home/begin/.config/dotfiles/workstations/life"                     \
+  beginworld="lynx -vikeys https://mygeoangelfirespace.city"                \
+  beginbotbot="lynx -vikeys https://mygeoangelfirespace.city/beginbot.html" \
+  bl="cd ~/journals/MY_LIFE/BLOGS"                                          \
+  blog="cd ~/journals/MY_LIFE/BLOGS/Marks"                                  \
+  vj="vi /home/begin/.config/dotfiles/nvim/README.md"                       \
+  ac="vi /home/begin/.config/aliasrc"                                       \
+  cl="vi /home/begin/code/chat_thief/logs/chat.log"                         \
+  um="vi /home/begin/code/chat_thief/logs/user_msgs.log"                    \
+  rt="vi ~/journals/MY_LIFE/RAW_TODOs.md"                                   \
+  to="vi ~/wiki/TODO.md"                                                    \
+  gj="vi ~/journals/MY_LIFE/BLOGS/GO_Journal.md"                            \
+  clip="xclip -sel clip"                                                    \
+  lg="lazygit"                                                              \
+  ld="lazydocker"                                                           \
+  psql="psql -U postgres"                                                   \
+  xr="$EDITOR ~/.Xresources"                                                \
+  nv="/usr/local/bin/nvim"
+
+
+# vim: filetype=sh
+alias j="cd ~/journals/MY_LIFE && ls"                      \
+ww="cd ~/journals/work && ls -a | lolcat"                  \
+cf="cd ~/.config && ls -a"                                 \
+mn="cd /mnt && ls -a"                                      \
+ws="cd ~/.config/workstations && ls -a"                    \
+vv="$EDITOR ~/.config/nvim/init.vim"                       \
+pp="$EDITOR ~/.config/scraps.txt"                          \
+sc="$EDITOR ~/.config/shortcutrc"                          \
+bw="cd ~/beginworld; echo 'Welcome to BeginWorld™'"        \
+bs="cd ~/code/beginsounds; echo 'Welcome to BeginSounds™'" \
+lu="cd ~/.config/nvim/lua; echo 'Welcome to LuaTown™'"     \
+vm="$EDITOR ~/vimwiki/index.wiki"
+
+
+# Twitch Specific
+alias                                         \
+  tw="$EDITOR ~/.config/TWITCH_CHAT_COMMANDS" \
+  sl="$EDITOR ~/code/chat_thief/chat_thief/config/stream_lords.py"
+
+
+# Current Projects
+alias \
+  py="cd ~/code/python-in-the-morning && ls -a | lolcat"  \
+  sb="cd ~/code/sandberg && va && python music.py --help" \
+  ct="cd ~/code/chat_thief && va"                         \
+
+
+# Midi Stuff
+alias                                                                                                                                          \
+  nojam="ps -e | grep 'fluidsynth\|mplayer' | grep -v 'grep' | awk '{print $2}' | xargs --no-run-if-empty kill"                                \
+  jam="fluidsynth --quiet -a pulseaudio -g 9 -m alsa_seq -l -i $SOUNDFONT  ~/code/sandberg/midi_files/test.mid > /dev/null 2> /dev/null & vis" \
+  fp="fluidsynth --quiet -a pulseaudio -g 1 -m alsa_seq -l -ni $SOUNDFONT "                                                                    \
+  fpp="fluidsynth -g 0.7 -a pulseaudio -i $SOUNDFONT -s -o 'shell.port=9988'"                                                                  \
+  kfpp="lsof -wni tcp:9988 | awk '{print $2}' | grep -v PID | xargs kill"
