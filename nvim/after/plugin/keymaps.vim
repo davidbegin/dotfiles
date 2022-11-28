@@ -32,28 +32,28 @@ imap <right> <nop>
 nnoremap <leader>pv :wincmd v<bar> :e %:h <bar><CR>
 
 " Quick reformatting of json
-noremap <silent><leader>js :%!python -m json.tool<cr>
+noremap <leader>js :%!python -m json.tool<cr>
 
 " Toggle Folding
 " TODO: Make this better
-noremap <silent><leader>fo :set fdm=indent<CR>
-noremap <silent><leader>fi zR; :set fdm=manual<CR>
+noremap <leader>fo :set fdm=indent<CR>
+noremap <leader>fi zR; :set fdm=manual<CR>
 
 " Use Vim spellcheck and chose the first presented option
 " for the word under the cursor
-noremap <silent><leader>s 1z=e
+noremap <leader>s 1z=e
 
 " Toggle a cursor for focusing on the cursor
 " Twitch chat hates it
-nnoremap <silent><leader>H :set cursorline! cursorcolumn!<CR>
-" nnoremap <silent><leader>h :set cursorline!<CR>
+nnoremap <leader>H :set cursorline! cursorcolumn!<CR>
+" nnoremap <leader>h :set cursorline!<CR>
 
 " Built in Vim Mappings
-nnoremap <silent><leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 
 " Toggling Line Numbers on
-nnoremap <silent><leader>no :set rnu!<CR>
-nnoremap <silent><leader>ni :set nu!<CR>
+nnoremap <leader>no :set rnu!<CR>
+nnoremap <leader>ni :set nu!<CR>
 
 " Faster saving
 " ...although maybe this should change
@@ -64,10 +64,10 @@ noremap ff :resize 100 <CR> <BAR> :vertical resize 220<CR>
 noremap fm <C-w>=
 
 " Faster Vimrc opening
-nnoremap <silent><leader>ev :vs $MYVIMRC<CR>
+nnoremap <leader>ev :vs $MYVIMRC<CR>
 
 " Quick reloading .vimrc
-noremap <silent><leader>rc :source ~/.config/nvim/init.vim<cr>
+noremap <leader>rc :source ~/.config/nvim/init.vim<cr>
 
 " Surround a word in quotes
 " I think I should instead use vim-surround more
@@ -86,37 +86,37 @@ tnoremap <C-[><C-[> <C-\><C-n>
 tnoremap <Esc> <C-\><C-n>
 
 " Not sure if I really need settings for toggling the sign column
-" nnoremap <silent><leader>scy :set scl=yes<CR>
-" nnoremap <silent><leader>scn :set scl=no<CR>
+" nnoremap <leader>scy :set scl=yes<CR>
+" nnoremap <leader>scn :set scl=no<CR>
 
 " ========= "
 " Telescope "
 " ========= "
 
 " Telescope
-nnoremap <silent><leader>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
+nnoremap <leader>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
 
 " I use these pretty often
-nnoremap <silent><leader>tg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
-nnoremap <silent><leader>tp <cmd>lua require'telescope.builtin'.git_files{}<CR>
-nnoremap <silent><leader>tm <cmd>lua require'telescope.builtin'.marks{}<CR>
+nnoremap <leader>tg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
+nnoremap <leader>tp <cmd>lua require'telescope.builtin'.git_files{}<CR>
+nnoremap <leader>tm <cmd>lua require'telescope.builtin'.marks{}<CR>
 
 " Not really using this yet, but might in the future
 nnoremap <leader>qf :lua require'telescope.builtin'.quickfix{}<CR>
-nnoremap <silent><leader>q :lua MakeAndPopulateQFList()<CR>
-nnoremap <silent><leader>ls :lua require'telescope.builtin'.loclist{}<CR>
+nnoremap <leader>q :lua MakeAndPopulateQFList()<CR>
+nnoremap <leader>ls :lua require'telescope.builtin'.loclist{}<CR>
 
 " Seems useful, but not using yet
-nnoremap <silent><leader>ch <cmd>lua require('telescope.builtin').command_history{}<CR>
+nnoremap <leader>ch <cmd>lua require('telescope.builtin').command_history{}<CR>
 
 " This works sporadically
-nnoremap <silent><leader>fz <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find{}<CR>
+nnoremap <leader>fz <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find{}<CR>
 
 " Useful in searching in our vim config as it gets more split up
-nnoremap <silent><leader>vv <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/dotfiles/nvim" }<CR>
+nnoremap <leader>vv <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/dotfiles/nvim" }<CR>
 
 " Search Within Vim Config Viles
-nnoremap <silent><leader>vf <cmd>lua require'telescope.builtin'.live_grep{ cwd = "~/.config/dotfiles/nvim" }<CR>
+nnoremap <leader>vf <cmd>lua require'telescope.builtin'.live_grep{ cwd = "~/.config/dotfiles/nvim" }<CR>
 
 " I'm not sure what this is for
 noremap <leader>dd :Telescope diagnostics<CR>
@@ -155,52 +155,51 @@ nnoremap <leader>k  :lua vim.lsp.diagnostic.goto_prev()<CR>
 " DAP / Debug Section "
 " =================== "
 
-" nnoremap <silent> <F10> :lua require'dap'.step_over()<CR>
-" nnoremap <silent> <F11> :lua require'dap'.step_into()<CR>
-" nnoremap <silent> <F12> :lua require'dap'.step_out()<CR>
+" nnoremap <F10> :lua require'dap'.step_over()<CR>
+" nnoremap <F11> :lua require'dap'.step_into()<CR>
+" nnoremap <F12> :lua require'dap'.step_out()<CR>
 
 nnoremap <leader>w :lua require'dapui'.toggle()<CR>
 
-nnoremap <silent> <leader>b :lua require'dap'.toggle_breakpoint()<CR>
-" nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nnoremap <leader>b :lua require'dap'.toggle_breakpoint()<CR>
+" nnoremap <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 
-nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
-nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
-nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>
+nnoremap <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+nnoremap <leader>dr :lua require'dap'.repl.open()<CR>
+nnoremap <leader>dl :lua require'dap'.run_last()<CR>
+nnoremap <leader>et :lua require("dapui").toggle()<CR>
 
-nnoremap <silent> <leader>et :lua require("dapui").toggle()<CR>
-"
 " ============== "
 " Random Plugins "
 " ============== "
 
 " Lazy Git with Floatterm
-nnoremap <silent><leader>lg :FloatermNew lazygit<CR>
+nnoremap <leader>lg :FloatermNew lazygit<CR>
 
 " Ranger with Floatterm
-nnoremap <silent><leader>rr :FloatermNew --height=0.9 --width=0.9 ranger<CR>
+nnoremap <leader>rr :FloatermNew --height=0.9 --width=0.9 ranger<CR>
 
 " Color Picker
-nnoremap <silent><leader>C :VCoolor<CR>
+nnoremap <leader>C :VCoolor<CR>
 
 " vim-trailing-whitespace
-noremap <silent><leader>ff :FixWhitespace<cr>
+noremap <leader>ff :FixWhitespace<cr>
 
 " To Focus on the Current Section of the Code
-noremap <silent><leader>gg :Goyo<cr>
+noremap <leader>gg :Goyo<cr>
 
 " Use Tabularize to line up things
-noremap <silent><leader>tt  :Tabularize/
+noremap <leader>tt  :Tabularize/
 
-noremap <silent><leader>ch :Cheat<CR>
+noremap <leader>ch :Cheat<CR>
 
 " Convert a Youtube Link to a Markdown link,
 " pulling the title with youtube-dl
-nnoremap <silent><leader>ll :call MdLink()<cr>
+nnoremap <leader>ll :call MdLink()<cr>
 
 " Create a Gist of the Selected section,
 " and post it to Twitch Chat
-vnoremap <silent><leader>gi :call GistAndPost(mode())<cr>
+vnoremap <leader>gi :call GistAndPost(mode())<cr>
 
 " Custom Twitch Commands
 nnoremap <leader>te :call TwitchCommands()<cr>
@@ -224,12 +223,3 @@ nnoremap <buffer> <leader>y :Dispatch make test<CR>
 " vim-projectionist for navigating to Alternate files
 nnoremap <leader>a :A<CR>
 nnoremap <leader>v :AV<CR>
-
-" Quick flipping of colorschemes to a Random one
-" noremap <silent><leader>jl :!wal --theme random_dark &<cr>
-
-" Vim-Signature Toggle for showing Marks
-" nnoremap <silent><leader>tm :SignatureToggle<CR>
-
-" Not Currently using Neogit
-" nnoremap <leader>ne :Neogit<CR>
