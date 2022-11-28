@@ -93,17 +93,8 @@ tnoremap <Esc> <C-\><C-n>
 " Telescope "
 " ========= "
 
-" We will continue to check this out
-" nnoremap <leader>f :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ results_width=0.8}))<cr>
-" nnoremap <Leader>f :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ winblend = 10 }))<cr>
-" nnoremap <silent><leader>iv <cmd>lua require'telescope.builtin'.file_browser{}<CR>
-
 " Telescope
-nnoremap <silent>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
-" nnoremap <silent><C-g> <cmd>lua require'telescope.builtin'.live_grep{}<CR>
-" nnoremap <silent><C-p> <cmd>lua require'telescope.builtin'.git_files{}<CR>
-"
-nnoremap <silent><leader>vf <cmd>lua require'telescope.builtin'.live_grep{ cwd = "~/.config/dotfiles/nvim" }<CR>
+nnoremap <silent><leader>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
 
 " I use these pretty often
 nnoremap <silent><leader>tg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
@@ -124,11 +115,11 @@ nnoremap <silent><leader>fz <cmd>lua require('telescope.builtin').current_buffer
 " Useful in searching in our vim config as it gets more split up
 nnoremap <silent><leader>vv <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/dotfiles/nvim" }<CR>
 
-" For the astronaut in all of us
-nnoremap <silent><leader>pl <cmd>lua require('telescope.builtin').planets{show_pluto=true}<CR>
+" Search Within Vim Config Viles
+nnoremap <silent><leader>vf <cmd>lua require'telescope.builtin'.live_grep{ cwd = "~/.config/dotfiles/nvim" }<CR>
 
-nnoremap <leader>dd :Telescope diagnostics<CR>
-nnoremap <leader>ws <cmd>lua require'telescope'.lsp_workspace_symbols()<CR>
+" I'm not sure what this is for
+noremap <leader>dd :Telescope diagnostics<CR>
 
 " ================== "
 " LSP and TreeSitter "
