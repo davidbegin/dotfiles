@@ -125,7 +125,7 @@ noremap <leader>dd :Telescope diagnostics<CR>
 " LSP and TreeSitter "
 " ================== "
 
-nnoremap H           <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap H          :lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>da :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>df :lua vim.diagnostic.open_float()<CR>
 
