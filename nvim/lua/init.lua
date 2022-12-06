@@ -78,8 +78,9 @@ local on_attach_vim_plus_keymaps = function(client)
 
   -- This is the only thing that worked
   mapper('n', 'gd',         '<cmd> lua vim.lsp.buf.definition()<CR>')
+  mapper('n', 'gr',         '<cmd> lua vim.lsp.buf.references()<CR>')
+  mapper('n', 'gT',        '<cmd> lua vim.lsp.buf.type_definition()<CR>')
 
-  -- mapper('n', '1gD',        '<cmd> lua vim.lsp.buf.type_definition()<CR>')
   -- mapper('n', 'g0',         '<cmd> lua vim.lsp.buf.document_symbol()<CR>')
   -- mapper('n', 'gD',         '<cmd> lua vim.lsp.buf.implementation()<CR>')
   -- mapper('n', 'gW',         '<cmd> lua vim.lsp.buf.workspace_symbol()<CR>')
@@ -95,7 +96,6 @@ local on_attach_vim_plus_keymaps = function(client)
   -- mapper('n', 'rn', '<cmd> lua vim.lsp.buf.rename()<CR>')
 
   -- Doesn't do what I expect
-  -- mapper('n', 'gr',         '<cmd> lua vim.lsp.buf.references()<CR>')
 
   -- Doesn't do anything
   -- mapper('n', '<c-k>',      '<cmd> lua vim.lsp.buf.signature_help()<CR>')
@@ -111,7 +111,10 @@ nvim_lsp.jedi_language_server.setup{
   on_attach=on_attach_vim_plus_keymaps
 }
 
-nvim_lsp.rust_analyzer.setup{}
+nvim_lsp.rust_analyzer.setup{
+
+  on_attach=on_attach_vim_plus_keymaps
+}
 
 local sumneko_root_path = '/home/begin/code/lua-language-server'
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
