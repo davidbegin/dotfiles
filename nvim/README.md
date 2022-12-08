@@ -8,10 +8,13 @@
 ## Current Keymaps Working on
 
 <leader>ch -> Search cheat.sh
+
 <leader>dn diagnostic.goto_next()
 <leader>dp diagnostic.goto_previous()
 <leader>da lsp.buf.code_action()
 <leader>gd lsp.buf.definition()
+
+<leader>vv Search Vim Config Files
 
 ## TODO
 

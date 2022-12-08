@@ -12,7 +12,7 @@ fi
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-# [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 EDITOR="nvim"
 
@@ -21,12 +21,13 @@ set -o vi
 autoload -U colors && colors
 
 # Load aliases and shortcuts if existent.
-# [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
+[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 # TODO: Figure out a better home for this
 [ -f ~/.twitch ] && . ~/.twitch
 [[ ! -f ~/.config/dotfiles/.secrets ]] || source ~/.config/dotfiles/.secrets
+[[ ! -f ~/.config/.linode ]] || source ~/.config/.linode
 
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -47,7 +48,7 @@ export KEYTIMEOUT=1
 
 export PS1="; "
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+# [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 # For Nim
 export PATH=$PATH:~/.nimble/bin
@@ -81,12 +82,6 @@ export DOCKER_BUILDKIT=1
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 export GOPRIVATE="github.com"
-
-[[ ! -f ~/.config/.linode ]] || source ~/.config/.linode
-## Everytime you reload this file make it like starting a PS1 and a connecting
-#over a 56K modem.
-# mplayer -af volume=10 "/home/begin/stream/Stream/Samples/ps1.opus" &
-# mplayer -af volume=10 "/home/begin/stream/Stream/Samples/56k.opus"
 
 export AWS_SDK_LOAD_CONFIG=1
 export MANPAGER="nvr +Man! -"
