@@ -2,6 +2,8 @@
 TMUX_CONFIG="~/.config/tmux/.tmux.conf"
 SOUNDFONT="/usr/share/soundfonts/FluidR3_GM.sf2"
 
+alias stream="./.config/workstations/stream"
+
 # TMUX Related Aliases alias
 alias                                 \
   tn="tmux -u -f $TMUX_CONFIG new"    \
